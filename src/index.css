@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+  position: relative;
+  /* height: 100vh; */
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+.form-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  padding: 20px;
+}
+
+/* Spinner */
+.spinner-body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* White background */
+}
+
+.spinner-container {
+  position: relative;
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #0074d9; /* Spinner color (blue in this example) */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-divider::before {
+  content: 'Or';
+  background-color: #fff;
+  padding: 5px;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn {
+  padding: 12px;
+  border-radius: 6px;
+  background-color: rgb(252, 165, 165);
+  color: white;
+}
+
+/* ///////////--HOME PAGE--/////////// */
+
+.landing-page {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+}
+
+.tagline {
+  position: absolute;
+  text-align: center;
+  margin-top: 10px;
+  top: 100px;
+  left: 54%;
+  transform: translate(-54%);
+  letter-spacing: -1px;
+  z-index: 5;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.background-photo.moveLeft {
+  animation: moveInLeft 1s ease-in-out;
+}
+
+.background-photo.moveRight {
+  animation: moveInRight 1s ease-in-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* ///////////--HOME PAGE--/////////// */
+.navBar::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+}
+
+.dogImg-container {
+  border-bottom: 1px solid gray;
+}
